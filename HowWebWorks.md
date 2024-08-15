@@ -30,3 +30,10 @@ There are three components of the HTTP system.
 - Proxies
 
 To learn more about HTTP request, visit <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview#components_of_http-based_systems" target="_blank">this summary of the HTTP requests</a>
+
+## Conclusion
+This is the complete image of how the web works.
+
+<img  alt="how the web works" src="/images/how_web_works.webp" width="800" height="400">  
+
+This is the short video to explain everything in this article <a href="https://www.youtube.com/watch?v=hJHvdBlSxug" target="_blank">video</a>
