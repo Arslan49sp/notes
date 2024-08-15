@@ -20,4 +20,13 @@ In a typical DNS query without any caching, four servers work together to delive
 
 <img src="/images/dns_servers.png" width="800" height="400">
 
-To learn more about client/server architecture and its types, visit <a href="https://www.cloudflare.com/en-gb/learning/dns/what-is-a-dns-server/" target="_blank">this summary of the DNS Servers</a>
+To learn more about DNS servers, visit <a href="https://www.cloudflare.com/en-gb/learning/dns/what-is-a-dns-server/" target="_blank">this summary of the DNS Servers</a>
+
+## HTTP Protocol
+HTTP is a protocol for fetching resources such as HTML documents. It is the foundation of any data exchange on the Web and it is a client-server protocol, which means requests are initiated by the recipient, usually the Web browser. A complete document is typically constructed from resources such as text content, layout instructions, images, videos, scripts, and more.  
+There are three components of the HTTP system.  
+- Client
+- Web Server
+- Proxies
+
+To learn more about HTTP request, visit <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview#components_of_http-based_systems" target="_blank">this summary of the HTTP requests</a>
