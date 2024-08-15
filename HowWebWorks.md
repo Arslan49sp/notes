@@ -18,4 +18,6 @@ In a typical DNS query without any caching, four servers work together to delive
 - TLD nameservers
 - Authoritative nameservers.
 
+<img src="/images/dns_servers.png" width="800" height="400">
+
 To learn more about client/server architecture and its types, visit <a href="https://www.cloudflare.com/en-gb/learning/dns/what-is-a-dns-server/" target="_blank">this summary of the DNS Servers</a>
