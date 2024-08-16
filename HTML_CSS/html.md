@@ -6,4 +6,7 @@ Using semantic tags does not change the appearance of the website in the browser
 - Making code easier for people to navigate when updating features or fixing bugs.
 - Giving your page a higher Search Engine Optimization (SEO) score, which makes your content more visible on search engines.
 - Allowing users with special needs to access your website using alternative means such as screen readers, which are devices that read the contents of a webpage 
-  aloud to users who have visual impairments.
+  aloud to users who have visual impairments.  
+
+For more information about these tags and how to structure a web page <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure" target="_blank">visit</a>
+
