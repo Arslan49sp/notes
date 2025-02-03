@@ -114,6 +114,7 @@ Now React Query is set up and ready to use in your React 18 project! 🚀
 
 ## **Auto Refresh**
 
+If the data is staled, React Query will try to fetch the new data from the backend while at the same time returning the stale data from the cache to application. When the new data is fetched, react query provide the fresh data to the component and the component is rerendered if required.
 React Query refetches data in the following scenarios:
 
 1. **On Window Focus** – Automatically refetches when the window is refocused.
@@ -123,3 +124,20 @@ React Query refetches data in the following scenarios:
 5. **On Mount** – Refetches the first time a component mounts.
 6. **Query Parameters Change** – Refetches when query keys or parameters change.
 7. **Polling** – Refetches at regular intervals with `refetchInterval`.
+
+## **Quries**
+
+To subscribe to a query in your components or custom hooks, call the `useQuery` hook with at least:
+
+- A unique key for the query
+- A function that returns a promise that:
+  - Resolves the data, or
+  - Throws an error
+
+```javascript
+import { useQuery } from "@tanstack/react-query";
+
+function App() {
+  const info = useQuery({ queryKey: ["todos"], queryFn: fetchTodoList });
+}
+```
