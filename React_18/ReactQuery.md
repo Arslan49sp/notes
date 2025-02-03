@@ -111,3 +111,15 @@ export default Posts;
 ```
 
 Now React Query is set up and ready to use in your React 18 project! 🚀
+
+## **Auto Refresh**
+
+React Query refetches data in the following scenarios:
+
+1. **On Window Focus** – Automatically refetches when the window is refocused.
+2. **On Network Status Change** – Refetches when the app goes online after being offline.
+3. **Stale Time Expiry** – Refetches when the data becomes stale (default 0ms).
+4. **Manual Refetch** – You can call `refetch()` to trigger a refetch.
+5. **On Mount** – Refetches the first time a component mounts.
+6. **Query Parameters Change** – Refetches when query keys or parameters change.
+7. **Polling** – Refetches at regular intervals with `refetchInterval`.
