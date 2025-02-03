@@ -164,3 +164,25 @@ function Todos({ todoId }) {
 
 Note that query keys act as dependencies for your query functions. Adding dependent variables to your query key will ensure that queries are cached independently, and that any time a variable changes, queries will be refetched automatically
 Query keys must be unique to ensure correct caching and refetching behavior. React Query uses the key to track each query's data and state.
+
+## **Query Functions**
+
+A query function can be literally any function that returns a promise. The promise that is returned should either resolve the data or throw an error.
+
+All of the following are valid query function configurations:
+
+```javascript
+useQuery({ queryKey: ["todos"], queryFn: fetchAllTodos });
+useQuery({ queryKey: ["todos", todoId], queryFn: () => fetchTodoById(todoId) });
+useQuery({
+  queryKey: ["todos", todoId],
+  queryFn: async () => {
+    const data = await fetchTodoById(todoId);
+    return data;
+  },
+});
+useQuery({
+  queryKey: ["todos", todoId],
+  queryFn: ({ queryKey }) => fetchTodoById(queryKey[1]),
+});
+```
