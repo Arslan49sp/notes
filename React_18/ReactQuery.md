@@ -111,8 +111,3 @@ export default Posts;
 ```
 
 Now React Query is set up and ready to use in your React 18 project! 🚀
-
-```
-
-Now you can copy and paste it directly! 🚀
-```
