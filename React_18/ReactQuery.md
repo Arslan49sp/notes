@@ -186,3 +186,33 @@ useQuery({
   queryFn: ({ queryKey }) => fetchTodoById(queryKey[1]),
 });
 ```
+
+## **Network Modes**
+
+Here are the different **network modes** in React Query:
+
+### **1. Online Mode (Default)**
+
+- **What it does**: React Query fetches data normally when the network is available.
+- **When it's used**: Fetches data when a query is triggered and automatically updates in the background.
+
+### **2. Offline Mode**
+
+- **What it does**: Allows the app to work even without a network connection.
+- **When it's used**: Caches the data while offline and syncs it back to the server when the network is restored.
+
+### **3. Background Fetching (Polling)**
+
+- **What it does**: React Query can automatically fetch data at regular intervals.
+- **When it's used**: Keeps the data fresh without needing the user to refresh. You can set the interval to update data periodically.
+
+```javascript
+useQuery("data", fetchData, { refetchInterval: 60000 }); // Fetch every 60 seconds
+```
+
+### **4. Focus Refetching (Auto Refetch)**
+
+- **What it does**: Automatically refetches data when you come back to the app after switching tabs or windows.
+- **When it's used**: Ensures that you see the most up-to-date data when returning to the app.
+
+React Query helps manage network behavior to keep data updated and user-friendly.
