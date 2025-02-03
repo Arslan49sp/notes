@@ -141,3 +141,26 @@ function App() {
   const info = useQuery({ queryKey: ["todos"], queryFn: fetchTodoList });
 }
 ```
+
+## **Query Key in React Query**
+
+A **Query Key** is a unique identifier for each query in React Query. It allows React Query to cache, track, and manage the state of different queries. The key helps React Query to differentiate between queries and refetch or update the data as needed.
+
+- **Simple Query Key**: A string (e.g., `"posts"`) to identify a query.
+- **Dynamic Query Key**: An array of values (e.g., `["posts", userId]`) to pass dynamic parameters like filters or pagination.
+
+**If your query function depends on a variable, include it in your query key.**
+
+**Example**:
+
+```javascript
+function Todos({ todoId }) {
+  const result = useQuery({
+    queryKey: ["todos", todoId],
+    queryFn: () => fetchTodoById(todoId),
+  });
+}
+```
+
+Note that query keys act as dependencies for your query functions. Adding dependent variables to your query key will ensure that queries are cached independently, and that any time a variable changes, queries will be refetched automatically
+Query keys must be unique to ensure correct caching and refetching behavior. React Query uses the key to track each query's data and state.
