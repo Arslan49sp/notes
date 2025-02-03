@@ -216,3 +216,44 @@ useQuery("data", fetchData, { refetchInterval: 60000 }); // Fetch every 60 secon
 - **When it's used**: Ensures that you see the most up-to-date data when returning to the app.
 
 React Query helps manage network behavior to keep data updated and user-friendly.
+
+## **Parallel Queries**
+
+"Parallel" queries are queries that are executed in parallel, or at the same time so as to maximize fetching concurrency.
+When the number of parallel queries does not change, there is no extra effort to use parallel queries. Just use any number of TanStack Query's `useQuery` and `useInfiniteQuery` hooks side-by-side!
+
+```javascript
+function App () {
+  // The following queries will execute in parallel
+  const usersQuery = useQuery({ queryKey: ['users'], queryFn: fetchUsers })
+  const teamsQuery = useQuery({ queryKey: ['teams'], queryFn: fetchTeams })
+  const projectsQuery = useQuery({ queryKey: ['projects'], queryFn: fetchProjects })
+  ...
+}
+```
+
+## **Dependent Queries**
+
+Dependent (or serial) queries depend on previous ones to finish before they can execute. To achieve this, it's as easy as using the `enabled` option to tell a query when it is ready to run:
+
+```javascript
+// Get the user
+const { data: user } = useQuery({
+  queryKey: ["user", email],
+  queryFn: getUserByEmail,
+});
+
+const userId = user?.id;
+
+// Then get the user's projects
+const {
+  status,
+  fetchStatus,
+  data: projects,
+} = useQuery({
+  queryKey: ["projects", userId],
+  queryFn: getProjectsByUser,
+  // The query will not execute until the userId exists
+  enabled: !!userId,
+});
+```
